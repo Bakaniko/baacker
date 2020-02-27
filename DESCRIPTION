@@ -1,0 +1,10 @@
+Package: baacker
+Title: Handle BAAC file
+Version: 0.0.0.9000
+Authors@R: person('Nicolas', 'Roelandt', email = 'nicolas.roelandt@univ-gustave-eiffel.fr', role = c('cre', 'aut'), comment = '0000-0001-9698-4275')
+Description: Help to handle BAAC (French corporal accident database) and extract data
+License: {{ License }}
+LazyData: true
+URL: https://github.com/Bakaniko/baacker
+BugReports: https://github.com/Bakaniko/baacker/issues
+Encoding: UTF-8
