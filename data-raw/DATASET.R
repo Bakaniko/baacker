@@ -5,7 +5,7 @@ library(fs)
 library(purrr)
 library(here)
 library(vroom)
-library(dplyr)
+
 
 ## parameters
 number_of_lines <- 10
@@ -21,11 +21,8 @@ name <- c("vehicules","usagers","lieux","caracteristiques")
 # Create dataframe with urls and file names
 df <- as.data.frame(cbind(name, url), stringsAsFactors = FALSE)
 
-# create temporary directory to store the zip files
-# temp_dir <- tempdir()
-
 # Download and rename each file => problem with certain files
-pmap(df, function(name,url) {
+purrr::pmap(df, function(name,url) {
   print(paste0("Reading ",name,'.csv'))
   vroom::vroom(url, # reading the remote file
                delim=",",
