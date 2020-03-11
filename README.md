@@ -31,8 +31,8 @@ You can install the released version of baacker from
 [Github](https://github.com/Bakaniko/baacker) with:
 
 ``` r
-# install.package("devtools")   #In case you have not installed it.
-devtools::install_github("Bakaniko/baacker")
+# install.package("remotes")   #In case you have not installed it.
+remotes::install_github("Bakaniko/baacker")
 ```
 
 ## Example

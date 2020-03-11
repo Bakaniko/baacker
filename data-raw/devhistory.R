@@ -122,3 +122,6 @@ hexSticker::sticker(imgurl,
         filename=here::here("inst/figures/imgfile.png"))
 
 usethis::use_code_of_conduct()
+
+usethis::use_data(baac_codage) # voir DATASET.R
+devtools::build_readme()
