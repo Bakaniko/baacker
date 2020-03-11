@@ -76,7 +76,7 @@ baac_atm <- c(
 )
 
 # Type de collision
-col <- c(
+baac_col <- c(
 "1" = "Deux véhicules - frontale",
 "2" = "Deux véhicules – par l’arrière",
 "3" = "Deux véhicules – par le coté",
@@ -375,3 +375,11 @@ baac_etatp  <- c(
 "2" = "Accompagné",
 "3" = "En groupe"
 )
+
+# Stockage dans un dataframe
+
+names <- ls(pattern = "baac_")
+
+baac_codage <- data.frame(names = names %>% stringr::str_replace("baac_", "") ,
+                     definitions = I(purrr::map(names, get)))
+usethis::use_data(baac_codage)
