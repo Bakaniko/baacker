@@ -1,12 +1,3 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
 # Some useful keyboard shortcuts for package authoring:
 #
 #   Install Package:           'Ctrl + Shift + B'
@@ -119,9 +110,11 @@ hexSticker::sticker(imgurl,
                     s_width=.5,
                     h_fill="#ffcc66",
                     h_color="#ffffff",
-        filename=here::here("inst/figures/imgfile.png"))
+                    filename=here::here("inst/figures/imgfile.png"))
 
 usethis::use_code_of_conduct()
 
 usethis::use_data(baac_codage) # voir DATASET.R
 devtools::build_readme()
+usethis::use_package("stringr")
+usethis::use_package("rvest")

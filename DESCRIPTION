@@ -8,3 +8,6 @@ LazyData: true
 URL: https://github.com/Bakaniko/baacker
 BugReports: https://github.com/Bakaniko/baacker/issues
 Encoding: UTF-8
+Imports: 
+    stringr,
+    rvest
