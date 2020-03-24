@@ -1,8 +1,8 @@
 #' get_datasets
 #' Get BAAC datasets from data.gouv.fr
 #'
-#' @param year Vector of years to download
-#' @return List of all available datasets if empty or the aggregated datasets for a specific year
+#' @param years Vector of years to download
+#' @return List of all available datasets if empty or filtered on years in a numeric vector
 #' @examples
 #' get_datasets()
 #' get_datasets(2018)
