@@ -27,13 +27,7 @@ BAAC is a French database for corporal accidents.
 The database is downloadable on Openlicence at [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/)
 
 ## Installation
-<!--
-You can install the released version of baacker from [CRAN](https://CRAN.R-project.org) with:
 
-``` r
-install.packages("baacker")
-```
---> 
 You can install the released version of baacker from [Github](https://github.com/Bakaniko/baacker) with:
 
 ``` r

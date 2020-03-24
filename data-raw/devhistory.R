@@ -118,3 +118,6 @@ usethis::use_data(baac_codage) # voir DATASET.R
 devtools::build_readme()
 usethis::use_package("stringr")
 usethis::use_package("rvest")
+usethis::use_test("get_datasets")
+usethis::use_package("httr")
+usethis::use_package("dplyr")

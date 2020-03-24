@@ -2,17 +2,18 @@
 #' Get BAAC datasets from data.gouv.fr
 #'
 #' @param year Vector of years to download
-#' @return List of datasets or the load datasets for specific years
+#' @return List of all available datasets if empty or the aggregated datasets for a specific year
 #' @examples
 #' get_datasets()
 #' get_datasets(2018)
 #' get_datasets(2016:2018)
 #' @export
 
-get_datasets <- function( year = NA) {
+get_datasets <- function( years = NA) {
   require(rvest)
-  require(tidyverse)
+  require(dplyr)
   require(stringr)
+  require(attempt)
 
   datasets_url <- xml2::read_html("https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/#_")
 
@@ -39,8 +40,32 @@ get_datasets <- function( year = NA) {
                    filename,
                    start = -8, end = -5)
              )
-  if (is.na(year)) {
+  if (is.na(years)) {
     return(baac_datasets)
   }
 
+  if (!is.na(years)) {
+
+     years <- try_catch(expr = as.numeric(years),
+              .e = ~ paste0("There is an error: ", .x),
+              .w = ~ paste0("This is a warning: ", .x))
+     stop_if_not(
+       is.numeric(years),
+       msg = "Year(s) should be in a numeric vector"
+     )
+
+    return(baac_datasets %>% filter(year %in% years))
+  }
+
 }
+
+# TODO
+# get_raw_datasets <- function(years) {
+#
+# }
+#
+
+# TODO
+# get_concatenated_datasets <- function(years) {
+#
+# }

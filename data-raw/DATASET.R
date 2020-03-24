@@ -383,3 +383,5 @@ names <- ls(pattern = "baac_")
 baac_codage <- data.frame(names = names %>% stringr::str_replace("baac_", "") ,
                      definitions = I(purrr::map(names, get)))
 usethis::use_data(baac_codage)
+
+

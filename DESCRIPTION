@@ -10,4 +10,9 @@ BugReports: https://github.com/Bakaniko/baacker/issues
 Encoding: UTF-8
 Imports: 
     stringr,
-    rvest
+    rvest,
+    httr,
+    dplyr
+Suggests: 
+    testthat (>= 2.1.0)
+RoxygenNote: 7.0.2

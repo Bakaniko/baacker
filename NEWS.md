@@ -4,3 +4,6 @@
 * Package initialisation
 * Add `README.Rmd`
 * Add a logo
+* Add sample dataset
+
+
