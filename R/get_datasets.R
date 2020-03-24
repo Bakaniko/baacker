@@ -59,11 +59,29 @@ get_datasets <- function( years = NA) {
 
 }
 
-# TODO
-# get_raw_datasets <- function(years) {
-#
-# }
-#
+#' Get BAAC csv files from data.gouv.fr to a specified folder
+#'
+#' @param years Vector of years to download
+#' @param path  Folder where to put the csv files
+#' @return File list and path to them
+#' @examples
+#' get_raw_datasets(2018, tempdir())
+#' get_raw_datasets(2016:2018, tempdir())
+#' @export
+get_raw_datasets <- function(years, path = tempdir()) {
+  require(purrr)
+  require(dplyr)
+
+  files_urls <- baacker::get_datasets(years)
+  files_urls <- files_urls %>%
+    mutate(path = paste0(path, '/', filename))
+
+  map2(files_urls[["url"]], files_urls[["path"]], ~ download.file(url = .x, destfile = .y))
+
+  file_list <- list.files(path, ".csv")
+  return(file_list)
+}
+
 
 # TODO
 # get_concatenated_datasets <- function(years) {
