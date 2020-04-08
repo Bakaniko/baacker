@@ -123,3 +123,7 @@ usethis::use_package("httr")
 usethis::use_package("dplyr")
 usethis::use_package("purrr")
 usethis::use_test("get_raw_datasets")
+
+usethis::use_r(name = "get_data")
+usethis::use_test("get_data")
+
