@@ -25,7 +25,7 @@ test_that("get_raw_datasets works with one year", {
 test_that("get_raw_datasets works with a numeric vector", {
 
   temp_dir <- tempdir()
-  get_raw_datasets(year = c(2018, 2016), path = tempdir())
+  get_raw_datasets(year = c(2018, 2016), path = temp_dir)
 
   files <- list.files(path = temp_dir, pattern = ".csv")
 
