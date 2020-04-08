@@ -68,9 +68,14 @@ get_datasets <- function( years = NA) {
 #' get_raw_datasets(2018, tempdir())
 #' get_raw_datasets(2016:2018, tempdir())
 #' @export
-get_raw_datasets <- function(years, path = tempdir()) {
+get_raw_datasets <- function(years, path) {
   require(purrr)
   require(dplyr)
+
+  if(missing(path)){
+    path <- tempdir()
+  }
+
 
   files_urls <- baacker::get_datasets(years)
   files_urls <- files_urls %>%
@@ -78,12 +83,6 @@ get_raw_datasets <- function(years, path = tempdir()) {
 
   map2(files_urls[["url"]], files_urls[["path"]], ~ download.file(url = .x, destfile = .y))
 
-  file_list <- list.files(path, ".csv")
+  file_list <- list.files(path = path, pattern = ".csv", full.names = TRUE)
   return(file_list)
 }
-
-
-# TODO
-# get_concatenated_datasets <- function(years) {
-#
-# }
