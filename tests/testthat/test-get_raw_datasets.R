@@ -47,5 +47,10 @@ test_that("get_raw_datasets works with a numeric vector", {
     files)
 })
 
+test_that("get_raw_datasets returns an error if not convertible in numeric vector", {
 
+  expect_error(get_raw_datasets(year = c("cd2018"))
+               , label = "Year(s) should be in a numeric vector")
+
+})
 
