@@ -46,7 +46,7 @@ get_datasets <- function( years = NA) {
 
   if (!is.na(years)) {
 
-     years <- try_catch(expr = as.numeric(years),
+     years <- attempt::try_catch(expr = as.numeric(years),
               .e = ~ paste0("There is an error: ", .x),
               .w = ~ paste0("This is a warning: ", .x))
      stop_if_not(

@@ -127,3 +127,4 @@ usethis::use_test("get_raw_datasets")
 usethis::use_r(name = "get_data")
 usethis::use_test("get_data")
 
+usethis::use_package("attempt")
