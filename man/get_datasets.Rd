@@ -5,13 +5,13 @@
 \title{get_datasets
 Get BAAC datasets from data.gouv.fr}
 \usage{
-get_datasets(year = NA)
+get_datasets(years = NA)
 }
 \arguments{
-\item{year}{Vector of years to download}
+\item{years}{Vector of years to download}
 }
 \value{
-List of all available datasets if empty or the aggregated datasets for a specific year
+List of all available datasets if empty or filtered on years in a numeric vector
 }
 \description{
 get_datasets

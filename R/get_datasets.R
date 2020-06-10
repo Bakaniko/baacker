@@ -34,7 +34,7 @@ get_datasets <- function( years = NA) {
   baac_datasets <- tibble(
      filename = filenames,
      url = urls
-     ) %>% filter(grepl(".csv", filename)) %>%# filter non CSV files
+     ) %>% filter(grepl(".csv", filename)) %>% # filter non CSV files
     mutate(year = # extract year
                  stringr::str_sub(
                    filename,
@@ -68,6 +68,7 @@ get_datasets <- function( years = NA) {
 #' get_raw_datasets(2018, tempdir())
 #' get_raw_datasets(2016:2018, tempdir())
 #' @export
+
 get_raw_datasets <- function(years, path) {
   require(purrr)
   require(dplyr)

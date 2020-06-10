@@ -9,7 +9,7 @@
 #' @export
 
 get_data <- function( years = 2018) {
-
-  return(years)
+  files <- baacker::get_raw_datasets(years)
+  return(files)
 
 }

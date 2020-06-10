@@ -127,4 +127,25 @@ usethis::use_test("get_raw_datasets")
 usethis::use_r(name = "get_data")
 usethis::use_test("get_data")
 
+devtools::document()
+
+# check dependencies
+library(dplyr)
+library("itdepends")
+package <- "baacker"
+itdepends::dep_usage_pkg(package) %>%
+  count(pkg, sort = TRUE)
+
+itdepends::dep_usage_pkg(package) %>%
+  group_by(pkg) %>%
+  count(fun) %>%
+  top_n(1) %>%
+  arrange(desc(n)) %>%
+  head()
+
+
+# TODO join all files in a dataframe
 usethis::use_package("attempt")
+
+
+
