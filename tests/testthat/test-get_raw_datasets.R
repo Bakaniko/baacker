@@ -51,6 +51,11 @@ test_that("get_raw_datasets returns an error if not convertible in numeric vecto
 
 
 test_that("get_raw_datasets returns path to the downloaded files", {
+  # Not working in test environnement but works in a regular one
+  # test output:
+  # test-get_raw_datasets.R:68: failure: get_raw_datasets returns path to the downloaded files
+  # baacker::get_raw_datasets(year = c(2018), path = temp_dir) not equal to `files`.
+  # Lengths differ: 8 is not 4
 
   temp_dir <- tempdir()
 
@@ -66,7 +71,7 @@ test_that("get_raw_datasets returns path to the downloaded files", {
 
   # Test if the downloaded files has the expected size
   expect_equal(
-    get_raw_datasets(year = c(2018), path = temp_dir),
+    baacker::get_raw_datasets(year = c(2018), path = temp_dir),
     files)
 })
 
