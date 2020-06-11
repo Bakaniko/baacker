@@ -147,5 +147,7 @@ itdepends::dep_usage_pkg(package) %>%
 # TODO join all files in a dataframe
 usethis::use_package("attempt")
 
+usethis::use_r(name = "create_unique_id")
+usethis::use_test("create_unique_id")
 
 
